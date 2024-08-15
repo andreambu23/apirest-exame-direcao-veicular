@@ -68,3 +68,18 @@ export const atualizar = (req: Request, res: Response) => {
 
     return res.status(204).send()
 }
+
+export const deletar = (req: Request, res: Response) => {
+
+    const { id } = req.params
+
+    const indiceExame = bancoDeDados.exames.findIndex((item) => {
+        return item.id === id
+    })
+
+
+    bancoDeDados.exames.splice(indiceExame, 1)
+
+
+    return res.status(204).send()
+}

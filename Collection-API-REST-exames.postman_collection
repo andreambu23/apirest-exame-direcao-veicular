@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "054cb572-5389-444c-b2ae-5bc4c0587240",
+		"name": "Collection-Exercicio-API-REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37658094"
+	},
+	"item": [
+		{
+			"name": "Index da API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Aprovados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/exames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de Exames - Correto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"examinador\": \"André Silva\",\r\n    \"candidato\": \"Enzo Gabriel\",\r\n    \"quantidade_eliminatorias\": \"0\",\r\n    \"quantidade_graves\": \"0\",\r\n    \"quantidade_medias\": \"1\",\r\n    \"quantidade_leves\": \"1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/exames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Exame",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"examinador\": \"André Silva\",\r\n    \"candidato\": \"Enzo Gabriel\",\r\n    \"quantidade_eliminatorias\": \"0\",\r\n    \"quantidade_graves\": \"0\",\r\n    \"quantidade_medias\": \"1\",\r\n    \"quantidade_leves\": \"1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/exames/8dc60128-c057-43ee-95fa-2a38bd0ae441",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exames",
+						"8dc60128-c057-43ee-95fa-2a38bd0ae441"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Exame",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/exames/8dc60128-c057-43ee-95fa-2a38bd0ae441",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exames",
+						"8dc60128-c057-43ee-95fa-2a38bd0ae441"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de Exames - Falta Dados",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"examinador\": \"André Silva\",\r\n    \"candidato\": \"Enzo Gabriel\",\r\n    \"quantidade_eliminatorias\": \"0\",\r\n    \"quantidade_graves\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/exames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exames"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

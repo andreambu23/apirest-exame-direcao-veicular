@@ -4,7 +4,6 @@ import bancoDeDados from "../../bancoDeDados";
 export const validarAtualizacaoCadastro = (req: Request, res: Response, next: NextFunction) => {
 
     const { id } = req.params
-    console.log(id, typeof(id));
     
     const {
         examinador,
