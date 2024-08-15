@@ -38,3 +38,33 @@ export const cadastrar = (req: Request, res: Response) => {
 
 
 }
+
+export const atualizar = (req: Request, res: Response) => {
+
+    const { id } = req.params
+    const {
+        examinador,
+        candidato,
+        quantidade_eliminatorias,
+        quantidade_graves,
+        quantidade_medias,
+        quantidade_leves
+    } = req.body
+
+    const exame = bancoDeDados.exames.find((item) => {
+        return item.id === id
+    })
+
+    if (!exame) {
+        return res.status(204).send()
+    }
+
+    exame.examinador = examinador
+    exame.candidato = candidato
+    exame.quantidadeEliminatorias = quantidade_eliminatorias
+    exame.quantidadeGraves = quantidade_graves
+    exame.quantidadeMedias = quantidade_medias
+    exame.quantidadeLeves = quantidade_leves
+
+    return res.status(204).send()
+}

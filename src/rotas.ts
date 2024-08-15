@@ -2,7 +2,8 @@ import { Router } from "express";
 import { server } from "./controllers/server";
 import { listarAprovados } from "./controllers/aprovados";
 import { validarCadastro } from "./middlewares/validarCadastroExame";
-import { cadastrar } from "./controllers/exames";
+import { atualizar, cadastrar } from "./controllers/exames";
+import { validarAtualizacaoCadastro } from "./middlewares/validarAtualizacaoCadastro";
 
 const routes = Router()
 
@@ -12,5 +13,8 @@ routes.get('/exames', listarAprovados)
 
 // POSTS
 routes.post('/exames', validarCadastro, cadastrar)
+
+// PUTS
+routes.put('/exames/:id', validarAtualizacaoCadastro, atualizar)
 
 export default routes
